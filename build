@@ -1,0 +1,2 @@
+docker build -t docker.kindsmarter.com:8000/repository/docker-release/alpine-jdk:latest .
+docker tag docker.kindsmarter.com:8000/repository/docker-release/alpine-jdk:latest docker.kindsmarter.com:8000/repository/docker-release/alpine-jdk:8u311
