@@ -35,5 +35,4 @@ RUN mkdir -p /opt && apk add --no-cache bash curl tar unzip busybox-extras && \
 
 # Set java environment
 ENV JAVA_HOME /opt/${JDK_PACKAGE_NAME}1.${JDK_VERSION_MAJOR}.0_${JDK_VERSION_MINOR}
-ENV CLASSPATH $JAVA_HOME/bin
 ENV PATH      ${PATH}:${JAVA_HOME}/bin
