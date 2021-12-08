@@ -1,2 +1,2 @@
 docker build -t richiemay/alpine-jdk:latest .
-docker tag richiemay/alpine-jdk:latest richiemay/alpine-jdk:8u311
+docker tag richiemay/alpine-jdk:latest richiemay/alpine-jdk:8u301
