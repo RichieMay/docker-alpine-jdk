@@ -25,7 +25,7 @@ RUN echo "http://mirrors.ustc.edu.cn/alpine/v3.15/main" > "/etc/apk/repositories
 
 # Install glibc and hotfix /etc/nsswitch.conf
 RUN apk add --no-cache --virtual=build-dependencies wget ca-certificates tar && \
-    wget "$ALPINE_GLIBC_DOWNLOAD_URL/${ALPINE_GLIBC_PACKAGE}" "$ALPINE_GLIBC_DOWNLOAD_URL/${ALPINE_GLIBC_BIN_PACKAGE}" "$ALPINE_GLIBC_DOWNLOAD_URL/${ALPINE_GLIBC_I18N_PACKAGE} "&& \
+    wget "$ALPINE_GLIBC_DOWNLOAD_URL/${ALPINE_GLIBC_PACKAGE}" "$ALPINE_GLIBC_DOWNLOAD_URL/${ALPINE_GLIBC_BIN_PACKAGE}" "$ALPINE_GLIBC_DOWNLOAD_URL/${ALPINE_GLIBC_I18N_PACKAGE}" && \
     apk add --no-cache --allow-untrusted "${ALPINE_GLIBC_PACKAGE}" "${ALPINE_GLIBC_BIN_PACKAGE}" "${ALPINE_GLIBC_I18N_PACKAGE}" && \
     echo -e "en_US\nzh_CN" | xargs -i /usr/glibc-compat/bin/localedef -i {} -f UTF-8 {}.UTF-8 && \
     echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf && \
