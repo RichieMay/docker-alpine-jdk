@@ -33,7 +33,7 @@ RUN apk add --no-cache --virtual=build-dependencies wget ca-certificates tar && 
     rm -rf "${ALPINE_GLIBC_PACKAGE}" "${ALPINE_GLIBC_BIN_PACKAGE}" "${ALPINE_GLIBC_I18N_PACKAGE}"
 
 # Install helper tools and oracle jdk
-RUN mkdir -p /opt && apk add --no-cache bash curl tar unzip busybox-extras && \
+RUN mkdir -p /opt && apk add --no-cache bash curl tar unzip tcpdump busybox-extras && \
     curl -jksSL "${JDK_DOWNLOAD_URL}/${JDK_VERSION_MAJOR}/${JDK_PACKAGE_NAME}-${JDK_VERSION_MAJOR}u${JDK_VERSION_MINOR}-linux-x64.tar.gz" | \
     tar -zxf - -C /opt
 
